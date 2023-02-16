@@ -1,0 +1,169 @@
+
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+  }
+  
+  main {
+    padding: 20px;
+    height: 90vh;
+  }
+  
+  section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  section p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  section form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  section form input[type="text"],
+  section form input[type="email"],
+  section form textarea {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  section form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    animation: header-slide-in 1s ease-in-out;
+  }
+  
+  @keyframes header-slide-in {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+  
+  section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: header-slide-in 1s ease-in-out;
+  }
+  
+  @keyframes header-slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  
+  section form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    animation: button-pulse 1s ease-in-out infinite;
+  }
+  
+  @keyframes button-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    animation: footer-fade-in 1s ease-in-out;
+  }
+  
+  @keyframes footer-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    body {
+      background-attachment: scroll;
+      height: auto;
+    }
+  }  
+
+  html,
+body {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  
+}
+
+footer {
+  position:relative !important;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Set the height of the footer */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 50px; /* Vertically center the text */
+}
+
+
+#contact {
+    margin-bottom: 5%;
+}
