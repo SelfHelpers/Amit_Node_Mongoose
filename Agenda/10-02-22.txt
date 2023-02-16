@@ -1,8 +1,0 @@
-Types specifically Null and undefinedTypes conversion
-Conditional branching ?:Nullish coalescing operator  
-Objects: this object Optional chaining in objects  
-Maps and Set Callbacks, Promises, Async Await  
-Class and prototypical inheritance Modules    
-Html basics and where script goesCss basics, flexbox
-
-async vs await
