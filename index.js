@@ -28,6 +28,7 @@ mongoose.connect("mongodb+srv://AmitRaj:AmitRaj123@cluster0.yog8h5r.mongodb.net/
 app.use(express.json());
 
 app.use('/tasks', require('./routes/task'));
+app.use('/users', require('./routes/user'));
 
 
 app.get('/', (req, res) => {
