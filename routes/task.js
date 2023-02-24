@@ -3,9 +3,10 @@ const router = express.Router();
 
 const Task = require('../models/tasks.model');
 
+const { deleteTaskById } = require('../controllers/TaskControllers');
 
 // Get All Tasks
-router.get('/', async (req, res) => {
+router.route('/').get( async (req, res) => {
 
     let taskData;
     await Task.find().then(tasks => {
@@ -20,7 +21,7 @@ router.get('/', async (req, res) => {
 
 
 // Save a new Task
-router.post('/addTask', async (req, res) => {
+router.route('/addTask').post( async (req, res) => {
 
     // const newTask = new Task({
     //     title: 'Mongoose Demo',
@@ -55,7 +56,7 @@ router.post('/addTask', async (req, res) => {
 
 });
 
-router.get('/getByUser/:id', async (req, res) => {
+router.route('/getByUser/:id').get( async (req, res) => {
     await Task.where("user").equals(req.params.id).then(data => {
         res.json({
             message: 'Data Fetched successfully',
@@ -69,7 +70,7 @@ router.get('/getByUser/:id', async (req, res) => {
     });
 })
 
-router.post('/update/:id', async (req, res) => {
+router.route('/update/:id').post( async (req, res) => {
     
     await Task.findById(req.params.id)
         .then(taskData => {
@@ -91,7 +92,7 @@ router.post('/update/:id', async (req, res) => {
         })
 })
 
-router.get('/getTask/:id', async (req, res) => {
+router.route('/getTask/:id').get( async (req, res) => {
     await Task.findById(req.params.id).then((task) => {
         res.json({
             message: 'Task Retrieved',
@@ -105,20 +106,7 @@ router.get('/getTask/:id', async (req, res) => {
     });
 })
 
-router.delete('/deleteTask/:id', async (req, res) => {
-    await Task.deleteOne({ id: req.params.id }).then((updatedTask) => {
-        res.json({
-            message: "Task Deleted successfully",
-            data: updatedTask
-        })
-    }).catch((error) => {
-        res.json({
-            message: "Task failed",
-            error: error
-        });
-    })
-
-});
+router.route('/deleteTask/:id').delete( deleteTaskById );
 
 
 module.exports = router;
