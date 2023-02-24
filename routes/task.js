@@ -89,7 +89,12 @@ router.route('/update/:id').post( async (req, res) => {
                     error: error
                 });
             })
-        })
+        }).catch((error) => {
+            res.status(404).json({
+                message: "Data not found",
+                error: error.message
+            })
+        });
 })
 
 router.route('/getTask/:id').get( async (req, res) => {
